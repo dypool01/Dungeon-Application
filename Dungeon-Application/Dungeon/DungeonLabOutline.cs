@@ -15,7 +15,8 @@ namespace Dungeon
             Console.WriteLine("DARK DUNGEON");
             Console.Title = "The Dark Dungeon";
             Console.WriteLine();
-            Console.WriteLine("Press any button to continue.");
+            Console.WriteLine("Press Enter to continue.\n" + 
+                "Or press Escape to exit.");
             Console.WriteLine();
             Console.ReadKey();
             #endregion
@@ -30,11 +31,11 @@ namespace Dungeon
             Console.WriteLine("On a scale of 1 to 100 how strong would you like to be? ");
             main.Life = Convert.ToInt32(Console.ReadLine());
             #endregion
+            
 
 
 
-
-            Console.Clear();
+            
 
             bool end = false;
 
@@ -130,6 +131,7 @@ namespace Dungeon
 
                         case "C":
                             Console.WriteLine("Character Info");
+                            Console.WriteLine(main);
                             break;
 
                         case "D":
