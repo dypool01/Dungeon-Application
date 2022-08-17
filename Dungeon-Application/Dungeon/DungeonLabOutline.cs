@@ -31,9 +31,9 @@ namespace Dungeon
             Console.WriteLine("On a scale of 1 to 100 how strong would you like to be? ");
             main.Life = Convert.ToInt32(Console.ReadLine());
             #endregion
-            
 
 
+            Console.WriteLine();
 
             
 
