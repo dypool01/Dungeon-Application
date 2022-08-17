@@ -4,32 +4,90 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Dungeon
 {
     internal class DungeonLabOutline
     {
         static void Main(string[] args)
         {
+            #region Intro
             Console.WriteLine("DARK DUNGEON");
             Console.Title = "The Dark Dungeon";
             Console.WriteLine();
+            Console.WriteLine("Press Enter to continue.\n" + 
+                "Or press Escape to exit.");
+            Console.WriteLine();
+            Console.ReadKey();
+            #endregion
 
-            Console.WriteLine("CREATE A PLAYER");
 
-            string playerName = Console.ReadLine();
+            #region Player Creation
+            Console.WriteLine("What is your name? ");
+            Console.WriteLine();
+            Character main = new Character();
+            main.Name = Console.ReadLine();
+            Console.Clear();
+            Console.WriteLine("On a scale of 1 to 100 how strong would you like to be? ");
+            main.Life = Convert.ToInt32(Console.ReadLine());
+            #endregion
+
+
+
+
+            Console.Clear();
 
             bool end = false;
+
+            Random rng = new Random();
+
+            int rand = rng.Next(6);
 
             do
             {
 
-                Console.WriteLine("CREATE A MONSTER");
-                Console.ReadLine();
-                Console.WriteLine();
-                Console.WriteLine("CREATE A ROOM");
-                Console.ReadLine();
-                Console.WriteLine();
-                
+                //TODO Create a Monster
+
+                //TODO Create a Room
+
+                decimal room = rand;
+
+                switch (room)
+                {
+                    case 0:
+                        //TODO create breakout of inner loop when winning or losing.
+                        Console.WriteLine("You enter a dimly lit Foyer");
+                        break;
+
+                    case 1:
+                        Console.WriteLine("You enter a dark bedroom ");
+                        break;
+
+                    case 2:
+                        Console.WriteLine("You have stumbled into a cave ");
+                        break;
+
+                    case 3:
+                        Console.WriteLine("You have blundered into the structures dungeon ");
+                        break;
+
+                    case 4:
+                        Console.WriteLine("You approach a (insert monster) lair ");
+                        break;
+
+                    case 5:
+                        Console.WriteLine("You discover the remains of a shop ");
+                        break;
+
+                    case 6:
+                        Console.WriteLine("A wall crumbles revealing a hidden library ");
+                        break;
+
+                    default:
+                        Console.WriteLine("Not a room.");
+                        break;
+                }//end switch
+
                 bool exit = true;
 
                 bool win = true;
@@ -55,6 +113,15 @@ namespace Dungeon
                         case "A":
                             //TODO create breakout of inner loop when winning or losing.
                             Console.WriteLine("Attack");
+                            win = true;
+                            if (win) 
+                            {
+                                Console.WriteLine("You have slain (insert monster here)");
+                            }
+                            else
+                            {
+                                Console.WriteLine("You have been slain by (Monster)");
+                            }
                             break;
 
                         case "B":
@@ -99,5 +166,6 @@ namespace Dungeon
 
 
         }//end main()
+
     }//end class
 }//end namespace
