@@ -34,8 +34,8 @@ namespace Dungeon
 
 
 
-
-            Console.Clear();
+            Console.WriteLine();
+            
 
             bool end = false;
 
@@ -131,6 +131,7 @@ namespace Dungeon
 
                         case "C":
                             Console.WriteLine("Character Info");
+                            Console.WriteLine(main);
                             break;
 
                         case "D":
