@@ -12,29 +12,30 @@ namespace Dungeon
         static void Main(string[] args)
         {
             #region Intro
-            Console.WriteLine("DARK DUNGEON");
-            Console.Title = "The Dark Dungeon";
+            Console.WriteLine("NEVERQUEST");
+            Console.Title = "NEVERQUEST";
             Console.WriteLine();
             Console.WriteLine("Press Enter to continue.\n" + 
                 "Or press Escape to exit.");
             Console.WriteLine();
             Console.ReadKey();
+            Console.Clear();
             #endregion
 
-
+            //TODO redo player creation after making races and classes as race and class will influence player stats
             #region Player Creation
-            Console.WriteLine("What is your name? ");
+            Console.WriteLine("Please name your character.");
             Console.WriteLine();
             Character main = new Character();
             main.Name = Console.ReadLine();
             Console.Clear();
-            Console.WriteLine("On a scale of 1 to 100 how strong would you like to be? ");
-            main.Life = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Choose your characters race.");
+            Console.WriteLine();
+
             #endregion
 
 
             Console.WriteLine();
-
             
 
             bool end = false;
@@ -84,7 +85,7 @@ namespace Dungeon
                         break;
 
                     default:
-                        Console.WriteLine("Not a room.");
+                        Console.WriteLine("You shouldn't be here!");
                         break;
                 }//end switch
 
