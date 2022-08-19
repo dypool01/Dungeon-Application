@@ -10,10 +10,10 @@ namespace DungeonLibrary
     [Serializable()]
     public class Weapon
     {
-        private int _minDamage;
-        private int _maxDamage;
-        private string _name;
-        private int _bonusHitChance;
+        private int _minDamage;//this is the minimum damage that a weapon can do
+        private int _maxDamage;//this is the maximum damage that a weapon can do
+        private string _name;//this is the name of the weapon
+        private int _bonusHitChance;//this is the weapons chance to land a critical strike.
 
         public int WeapID { get; set; }
         public string savedWeap { get; set; }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Dungeon
+namespace DungeonLibrary
 {
     [Serializable()]
     public class Character
@@ -13,6 +13,8 @@ namespace Dungeon
         private int _maxLife;
         private int _life;
         private string _name;
+        private string _race;
+        private string _job;
         private int _str;
         private int _dex;
         private int _con;
@@ -26,12 +28,14 @@ namespace Dungeon
         
         
         public string Name { get; set; }
+        public string Race { get; set; }
+        public string Job { get; set; }
         public int AC { get; set; }
         public int MaxLife { get; set; }
         public int PlusToHit { get; set; }
         public int MagicPlusToHit { get; set; }
         public int HealPlus { get; set; }
-
+        
 
 
 
@@ -269,6 +273,13 @@ namespace Dungeon
         {
             MaxLife = maxLife;
             Name = name;
+            Life = life;
+            AC = ac;
+            Str = str;
+            Dex = dex;
+            Con = con;
+            Wis = wis;
+            Intel = intel;
             
             
 
