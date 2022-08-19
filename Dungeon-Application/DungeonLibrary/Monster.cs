@@ -12,33 +12,31 @@ namespace DungeonLibrary
     //make it public
     //make it a child
 
-    
-    public class Player : Character
+
+    public class Monster : Character
     {
         //Fields
-        //TODO make pages for speech, maximum exp, discount, spells, money, items.
+        
 
 
         //PROPS
-        public ClassesEnum PlayerJob { get; set; }
-        public Races PlayerRace { get; set; }
-        public Weapon Weapon { get; set; }
+        public MonsterEnums MonsterName { get; set; }
         public string Class { get; set; }
 
 
 
         //ctors
 
-        
-        public Player( string name, int life, int maxLife, int ac, int str, int dex, int con, int wis, int intel, ClassesEnum playerjob, Races playerRace)
+
+        public Monster(string name, int life, int maxLife, int ac, int str, int dex, int con, int wis, int intel, MonsterEnums monsterName)
             : base(name, life, maxLife, ac, str, dex, con, wis, intel)
-            {
+        {
+           
 
-            
-            
-            }//unique props
 
-        public Player()
+        }//unique props
+
+        public Monster()
         {
 
         }
@@ -48,9 +46,13 @@ namespace DungeonLibrary
         public override string ToString()
         {
             return $"{base.ToString()}\n" +
-                $"Class: {PlayerJob}\t\tRace: {PlayerRace}";
+                $"Name: {MonsterName}";
         }
 
+        public override int CalcDamage()
+        {
+            return base.CalcDamage();
+        }
 
 
     }//end public class
