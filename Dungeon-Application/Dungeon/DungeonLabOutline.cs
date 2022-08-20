@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Xml.Linq;
 using DungeonLibrary;
 using DungeonLibrary.Enums;
+using MonsterLibrary;
 
 namespace Dungeon
 {
@@ -70,8 +71,8 @@ namespace Dungeon
                     main.Str = 15;
                     main.Dex = 18;
                     main.Con = 15;
-                    main.Intel = 20;
-                    main.Wis = 18;
+                  //  main.Intel = 20;
+                  //  main.Wis = 18;
                     break;
 
                 case "2":
@@ -83,8 +84,8 @@ namespace Dungeon
                     main.Str = 17;
                     main.Dex = 17;
                     main.Con = 17;
-                    main.Intel = 17;
-                    main.Wis = 17;
+                  //  main.Intel = 17;
+                  //  main.Wis = 17;
                     break;
 
                 case "3":
@@ -96,8 +97,8 @@ namespace Dungeon
                     main.Str = 17;
                     main.Dex = 17;
                     main.Con = 16;
-                    main.Intel = 19;
-                    main.Wis = 18;
+                  //  main.Intel = 19;
+                  //  main.Wis = 18;
                     break;
 
                 case "4":
@@ -109,8 +110,8 @@ namespace Dungeon
                     main.Str = 18;
                     main.Dex = 20;
                     main.Con = 16;
-                    main.Intel = 17;
-                    main.Wis = 19;
+                  //  main.Intel = 17;
+                  //  main.Wis = 19;
                     break;
 
                 case "5":
@@ -122,8 +123,8 @@ namespace Dungeon
                     main.Str = 19;
                     main.Dex = 17;
                     main.Con = 18;
-                    main.Intel = 16;
-                    main.Wis = 17;
+                 //   main.Intel = 16;
+                 //   main.Wis = 17;
                     break;
 
                 case "6":
@@ -135,8 +136,8 @@ namespace Dungeon
                     main.Str = 20;
                     main.Dex = 15;
                     main.Con = 16;
-                    main.Intel = 17;
-                    main.Wis = 19;
+                  //  main.Intel = 17;
+                  //  main.Wis = 19;
                     break;
 
                 default:
@@ -160,72 +161,72 @@ namespace Dungeon
                 case "1":
                     main.PlayerJob = ClassesEnum.Berserker;
                     main.AC = 17;
-                    //    main.Str += 5;
-                    //    main.Dex += 3;
-                    //    main.Con += 2;
-                    //    main.Intel += 3;
-                    //    main.Wis += 14;
+                        main.Str += 5;
+                        main.Dex += 3;
+                        main.Con += 2;
+                //        main.Intel += 3;
+                //        main.Wis += 1;
                     break;
 
                 case "2":
                     main.PlayerJob = ClassesEnum.Cleric;
                     main.AC = 21;
-                    //      main.Str = 17;
-                    //      main.Dex = 18;
-                    //      main.Con = 18;
-                    //      main.Intel = 17;
-                    //      main.Wis = 20;
+                          main.Str += 17;
+                          main.Dex += 18;
+                          main.Con += 18;
+                 //         main.Intel += 17;
+                 //         main.Wis += 20;
                     break;
 
                 case "3":
                     main.PlayerJob = ClassesEnum.Monk;
                     main.AC = 15;
-                    //      main.Str = 19;
-                    //      main.Dex = 20;
-                    //      main.Con = 18;
-                    //      main.Intel = 17;
-                    //      main.Wis = 17;
+                          main.Str += 19;
+                          main.Dex += 20;
+                          main.Con += 18;
+                 //         main.Intel += 17;
+                 //         main.Wis += 17;
                     break;
 
                 case "4":
                     main.PlayerJob = ClassesEnum.Paladin;
                     main.AC = 23;
-                    //     main.Str = 18;
-                    //     main.Dex = 18;
-                    //     main.Con = 19;
-                    //     main.Intel = 16;
-                    //     main.Wis = 17;
+                         main.Str += 18;
+                         main.Dex += 18;
+                         main.Con += 19;
+                  //       main.Intel += 16;
+                  //       main.Wis += 17;
                     break;
 
                 case "5":
                     main.PlayerJob = ClassesEnum.ShadowKnight;
                     main.AC = 23;
-                    //     main.Str = 18;
-                    //     main.Dex = 18;
-                    //     main.Con = 19;
-                    //     main.Intel = 17;
-                    //     main.Wis = 16;
+                        main.Str += 18;
+                        main.Dex += 18;
+                        main.Con += 19;
+                  //      main.Intel += 17;
+                  //      main.Wis += 16;
                     break;
 
                 case "6":
                     main.PlayerJob = ClassesEnum.Warrior;
                     main.AC = 25;
-                    //     main.Str = 19;
-                    //     main.Dex = 19;
-                    //     main.Con = 20;
-                    //     main.Intel = 14;
-                    //     main.Wis = 14;
+                         main.Str += 19;
+                         main.Dex += 19;
+                         main.Con += 20;
+                 //       main.Intel += 14;
+                 //       main.Wis += 14;
                     break;
 
-                case "7":
-                    main.PlayerJob = ClassesEnum.Wizard;
-                    main.AC = 15;
-                    //    main.Str = 15;
-                    //    main.Dex = 16;
-                    //    main.Con = 16;
-                    //    main.Intel = 20;
-                    //    main.Wis = 20;
-                    break;
+              //  case "7":
+              //      main.PlayerJob = ClassesEnum.Wizard;
+              //      main.AC = 15;
+              //      //    main.Str = 15;
+              //      //    main.Dex = 16;
+              //      //    main.Con = 16;
+              //      //    main.Intel = 20;
+              //      //    main.Wis = 20;
+              //      break;
 
                 default:
                     Console.WriteLine("You have not chosen a playable class");
@@ -235,8 +236,6 @@ namespace Dungeon
 
             do
             {
-               
-
 
                 Console.WriteLine();
                 
@@ -248,7 +247,7 @@ namespace Dungeon
 
                     int rand = rng.Next(6);
 
-                    decimal randMon = rng.Next(5);
+                    
 
                     
 
@@ -292,39 +291,11 @@ namespace Dungeon
                             break;
                     }//end switch
 
-                    // Fix The Monster Generator
-                    //currently outputs a random integer
+                    //Grab monster for the room
 
-                    switch (randMon)
-                    {
-                        case 0:
-                            Monster mon1 = new Monster("WereWolf", 100, 150, 10, 16, 14, 15, 14, 14, MonsterEnums.AWereWolf);
-                            Console.WriteLine("You encounter a" + mon1.Name);
-                            break;
-                        case 1:
-                            Monster mon2 = new Monster("Zombie", 100, 150, 10, 16, 14, 15, 14, 14, MonsterEnums.AZombie);
-                            Console.WriteLine("You encounter a" + mon2.Name);
-                            break;
-                        case 2:
-                            Monster mon3 = new Monster("Gnoll", 100, 150, 10, 16, 14, 15, 14, 14, MonsterEnums.AGnoll);
-                            Console.WriteLine("You encounter a" + mon3.Name);
-                            break;
-                        case 3:
-                            Monster mon4 = new Monster("Skeleton", 100, 150, 10, 16, 14, 15, 14, 14, MonsterEnums.ASkeleton);
-                            Console.WriteLine("You encounter a" + mon4.Name);
-                            break;
-                        case 4:
-                            Monster mon5 = new Monster("Frost Bite Spider", 100, 150, 10, 16, 14, 15, 14, 14, MonsterEnums.AFrostBiteSpider);
-                            Console.WriteLine("You encounter a" + mon5.Name);
-                            break;
-                        case 5:
-                            Monster mon6 = new Monster("Dragon", 100, 150, 10, 16, 14, 15, 14, 14, MonsterEnums.ADragon);
-                            Console.WriteLine("You encounter a" + mon6.Name);
-                            break;
-                        default:
-                            Console.WriteLine("nothing appears");
-                            break;
-                    }//end switch
+                    Monster monster = Monster.GetMonster();
+
+                    Console.WriteLine("In this room..." + monster.Name);
 
 
                     //1. TODO create menu
@@ -351,7 +322,7 @@ namespace Dungeon
 
                         case "B":
                             Console.WriteLine("Run Away");
-                            reload = false;
+                            reload = true;
                             break;
 
                         case "C":
@@ -362,7 +333,7 @@ namespace Dungeon
 
                         case "D":
                             Console.WriteLine("Monster Info");
-                            Console.WriteLine(randMon);
+                            Console.WriteLine(monster);
                             break;
 
                         case "E":
