@@ -300,7 +300,7 @@ namespace DungeonLibrary
                    $"Health: {Life}\n" +
                    $"AC: {AC}\n" +
                    $"Constitution: {Con}\n"+
-                   $"Strenght: {Str}\n" +
+                   $"Strength: {Str}\n" +
                    $"Dexterity: {Dex}\n" +
                    $"Intelligence: {Intel}\n" +
                    $"Wisdom: {Wis}";
