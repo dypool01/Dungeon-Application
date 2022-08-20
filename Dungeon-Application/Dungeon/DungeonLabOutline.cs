@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using DungeonLibrary;
 using DungeonLibrary.Enums;
 using MonsterLibrary;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace Dungeon
 {
@@ -17,13 +19,11 @@ namespace Dungeon
             
 
             bool end = false;
-
-            ConsoleKeyInfo keyInfo;
-
+            int score = 0;
             #region Intro
 
             //TODO Create exit in intro add ifs and else
-            Console.ForegroundColor = ConsoleColor.Red;
+            Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine("NEVERQUEST");
             Console.Title = "NEVERQUEST";
             Console.WriteLine();
@@ -153,9 +153,9 @@ namespace Dungeon
                     "3. Monk\n" +
                     "4. Paladin\n" +
                     "5. ShadowKnight\n" +
-                    "6. Warrior\n" +
-                    "7. Wizard");
-
+                    "6. Warrior\n");
+               //     "7. Wizard");
+            
             switch (Console.ReadLine())
             {
                 case "1":
@@ -233,63 +233,16 @@ namespace Dungeon
                     break;
             }//end switch
             #endregion
-
+            Console.Clear();
             do
             {
-
-                Console.WriteLine();
                 
-                bool reload = false;
-                do
-                {
-
-                    Random rng = new Random();
-
-                    int rand = rng.Next(6);
-
-                    
-
-                    
+               
 
                     //3. TODO Create a Room
 
-                    decimal room = rand;
-
-                    switch (room)
-                    {
-                        case 0:
-                            //TODO create breakout of inner loop when winning or losing.
-                            Console.WriteLine("You enter a dimly lit Foyer");
-                            break;
-
-                        case 1:
-                            Console.WriteLine("You enter a dark bedroom ");
-                            break;
-
-                        case 2:
-                            Console.WriteLine("You have stumbled into a cave ");
-                            break;
-
-                        case 3:
-                            Console.WriteLine("You have blundered into the structures dungeon ");
-                            break;
-
-                        case 4:
-                            Console.WriteLine("You approach a (insert monster) lair ");
-                            break;
-
-                        case 5:
-                            Console.WriteLine("You discover the remains of a shop ");
-                            break;
-
-                        case 6:
-                            Console.WriteLine("A wall crumbles revealing a hidden library ");
-                            break;
-
-                        default:
-                            Console.WriteLine("You shouldn't be here!");
-                            break;
-                    }//end switch
+                    string room = GetRoom();
+                    Console.WriteLine(room);
 
                     //Grab monster for the room
 
@@ -306,6 +259,9 @@ namespace Dungeon
                         "D. Monster Info\n" +
                         "E. Exit");
 
+                bool reload = false;
+                do
+                {
 
                     //2.TODO create switch
 
@@ -315,10 +271,33 @@ namespace Dungeon
                     switch (choice)
                     {
                         case "A":
-                            //TODO create breakout of inner loop when winning or losing.
+                            //TODO create character properties that give an advantage before battle starts.
+                            //ex. if (player.CharacterRace == Race.SuperSpeedyBoi)
+                            //{
+                            // Combat.DoAttack(player, monster);
+                            //)
+                            //TODO add functionality for weapon stats
                             Console.WriteLine("Attack");
-                            
-                            break;
+                            Combat.DoBattle(main, monster);
+                            if (monster.Life <= 0)
+                            {
+                                //IT's DEAD!
+                                //Could put logic here to have the player get items, life, or something similar due to beating the monster. Add logic for mini-boss monsters to drop certain weapons
+                                score++;
+                                Console.ForegroundColor = ConsoleColor.Green;
+                                Console.WriteLine($"\nYou killed {monster}");
+                                //Add EQ coin loot noise here for winning
+                                Console.ResetColor();
+                                reload = true; //get a new room, and a new monster
+                            }//end if
+                            if (main.Life <= 0)
+                            {
+                                Console.WriteLine("Dude.... You died!\a");
+                                Console.ForegroundColor= ConsoleColor.Magenta;
+                                //Add EQ skeleton laugh here for losing
+                                end = true;//leave the entire game
+                            }//end if
+                            break;//end case A
 
                         case "B":
                             Console.WriteLine("Run Away");
@@ -362,6 +341,24 @@ namespace Dungeon
             Console.ReadKey(true);
             #endregion
         }//end main()
+        //GetRoom()
+        private static string GetRoom()
+        {
+            string[] rooms =
+            {
+
+               "You have entered a dank basement.",
+               "Bones are strewn across the floor of what appears to be a kitchen.",
+               "This area is filled with crags and soul fire!",
+               "You hear ghostly whispering amongst gravestones.",
+               "This dank basement seems familiar.",
+               "Is this the same dank basement as before?"
+               
+
+
+            };
+            return rooms[new Random().Next(rooms.Length)];
+        }//end GetRoom
 
     }//end class
 }//end namespace
