@@ -18,8 +18,8 @@ namespace DungeonLibrary
         private int _str;
         private int _dex;
         private int _con;
-        private int _intel;
-        private int _wis;
+     //   private int _intel;
+     //   private int _wis;
 
 
 
@@ -33,8 +33,8 @@ namespace DungeonLibrary
         public int AC { get; set; }
         public int MaxLife { get; set; }
         public int PlusToHit { get; set; }
-        public int MagicPlusToHit { get; set; }
-        public int HealPlus { get; set; }
+     //   public int MagicPlusToHit { get; set; }
+     //   public int HealPlus { get; set; }
         
 
 
@@ -166,85 +166,85 @@ namespace DungeonLibrary
             }
         }
 
-        public int Intel
-        {
-            get { return _intel; }
-            set
-            {
-                switch (value)
-                {
-                    case 20:
-                        _intel = value;
-                        MagicPlusToHit += 6;
-                        break;
-                    case 19:
-                        _intel = value;
-                        MagicPlusToHit += 5;
-                        break;
-                    case 18:
-                        _intel = value;
-                        MagicPlusToHit += 4;
-                        break;
-                    case 17:
-                        _intel = value;
-                        MagicPlusToHit += 3;
-                        break;
-                    case 16:
-                        _intel = value;
-                        MagicPlusToHit += 2;
-                        break;
-                    case 15:
-                        _intel = value;
-                        MagicPlusToHit += 1;
-                        break;
-                    case 14:
-                    default:
-                        _intel = value;
-                        break;
-                }
-
-            }
-        }
-
-        public int Wis
-        {
-            get { return _wis; }
-            set
-            {
-                switch (value)
-                {
-                    case 20:
-                        _wis = value;
-                        HealPlus += 12;
-                        break;
-                    case 19:
-                        _wis = value;
-                        HealPlus += 10;
-                        break;
-                    case 18:
-                        _wis = value;
-                        HealPlus += 8;
-                        break;
-                    case 17:
-                        _wis = value;
-                        HealPlus += 6;
-                        break;
-                    case 16:
-                        _wis = value;
-                        HealPlus += 4;
-                        break;
-                    case 15:
-                        _wis = value;
-                        HealPlus += 2;
-                        break;
-                    case 14:
-                    default:
-                        _wis = value;
-                        break;
-                }
-
-            }
-        }
+     //   public int Intel
+     //   {
+     //       get { return _intel; }
+     //       set
+     //       {
+     //           switch (value)
+     //           {
+     //               case 20:
+     //                   _intel = value;
+     //                   MagicPlusToHit += 6;
+     //                   break;
+     //               case 19:
+     //                   _intel = value;
+     //                   MagicPlusToHit += 5;
+     //                   break;
+     //               case 18:
+     //                   _intel = value;
+     //                   MagicPlusToHit += 4;
+     //                   break;
+     //               case 17:
+     //                   _intel = value;
+     //                   MagicPlusToHit += 3;
+     //                   break;
+     //               case 16:
+     //                   _intel = value;
+     //                   MagicPlusToHit += 2;
+     //                   break;
+     //               case 15:
+     //                   _intel = value;
+     //                   MagicPlusToHit += 1;
+     //                   break;
+     //               case 14:
+     //               default:
+     //                   _intel = value;
+     //                   break;
+     //           }
+     //
+     //       }
+     //   }
+     //
+     //   public int Wis
+     //   {
+     //       get { return _wis; }
+     //       set
+     //       {
+     //           switch (value)
+     //           {
+     //               case 20:
+     //                   _wis = value;
+     //                   HealPlus += 12;
+     //                   break;
+     //               case 19:
+     //                   _wis = value;
+     //                   HealPlus += 10;
+     //                   break;
+     //               case 18:
+     //                   _wis = value;
+     //                   HealPlus += 8;
+     //                   break;
+     //               case 17:
+     //                   _wis = value;
+     //                   HealPlus += 6;
+     //                   break;
+     //               case 16:
+     //                   _wis = value;
+     //                   HealPlus += 4;
+     //                   break;
+     //               case 15:
+     //                   _wis = value;
+     //                   HealPlus += 2;
+     //                   break;
+     //               case 14:
+     //               default:
+     //                   _wis = value;
+     //                   break;
+     //           }
+     //
+     //       }
+     //   }
 
         public int Life
         {
@@ -278,8 +278,8 @@ namespace DungeonLibrary
             Str = str;
             Dex = dex;
             Con = con;
-            Wis = wis;
-            Intel = intel;
+    //       Wis = wis;
+    //       Intel = intel;
             
             
 
@@ -299,11 +299,10 @@ namespace DungeonLibrary
             return $"Name: {Name}\n" +
                    $"Health: {Life}\n" +
                    $"AC: {AC}\n" +
-                   $"Constitution: {Con}\n"+
+                   $"Constitution: {Con}\n" +
                    $"Strength: {Str}\n" +
-                   $"Dexterity: {Dex}\n" +
-                   $"Intelligence: {Intel}\n" +
-                   $"Wisdom: {Wis}";
+                   $"Dexterity: {Dex}\n";
+                  
                    
         }//end Character method
 
@@ -322,15 +321,15 @@ namespace DungeonLibrary
             return 0;
         }//end CalcDamage
 
-        public virtual int CalcMagicDamage()
-        {
-            return 0;
-        }//end CalcMagic Damage
-
-        public virtual int CalcHeal()
-        {
-            return 0;
-        }//end CalcHeal
+      //  public virtual int CalcMagicDamage()
+      //  {
+      //      return 0;
+      //  }//end CalcMagic Damage
+      //
+      //  public virtual int CalcHeal()
+      //  {
+      //      return 0;
+      //  }//end CalcHeal
 
         
 

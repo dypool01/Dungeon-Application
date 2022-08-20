@@ -52,7 +52,7 @@ namespace MonsterLibrary
 Life: {Life} of {MaxLife}
 AC: {AC}    Con: {Con}
 Str: {Str}  Dex: {Dex}
-Wis: {Wis}  Int: {Intel}
+
 
 ";
         }//end end Monster Stats string
