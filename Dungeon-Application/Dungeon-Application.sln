@@ -7,9 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Dungeon", "Dungeon\Dungeon.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DungeonLibrary", "DungeonLibrary\DungeonLibrary.csproj", "{BC2E555F-CBF7-427F-B521-42E8E575C75F}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeaponLibrary", "WeaponLibrary\WeaponLibrary.csproj", "{875E3E21-ACA0-463F-A8F3-CDC4A7AB045E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonsterLibrary", "MonsterLibrary\MonsterLibrary.csproj", "{0F0A45D5-F8B4-49A1-99E5-C1E6F8C6FEC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonsterLibrary", "MonsterLibrary\MonsterLibrary.csproj", "{0F0A45D5-F8B4-49A1-99E5-C1E6F8C6FEC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +23,6 @@ Global
 		{BC2E555F-CBF7-427F-B521-42E8E575C75F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC2E555F-CBF7-427F-B521-42E8E575C75F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC2E555F-CBF7-427F-B521-42E8E575C75F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{875E3E21-ACA0-463F-A8F3-CDC4A7AB045E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{875E3E21-ACA0-463F-A8F3-CDC4A7AB045E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{875E3E21-ACA0-463F-A8F3-CDC4A7AB045E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{875E3E21-ACA0-463F-A8F3-CDC4A7AB045E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0F0A45D5-F8B4-49A1-99E5-C1E6F8C6FEC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0F0A45D5-F8B4-49A1-99E5-C1E6F8C6FEC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F0A45D5-F8B4-49A1-99E5-C1E6F8C6FEC7}.Release|Any CPU.ActiveCfg = Release|Any CPU

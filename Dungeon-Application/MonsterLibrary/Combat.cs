@@ -15,9 +15,9 @@ namespace MonsterLibrary
 
         public static void DoAttack(Character attacker, Character defender)
         {
-            //get a random number from 1-100 as our dice roll.
+            //get a random number from 1-50 as our dice roll.
             Random rand = new Random();
-            int diceRoll = rand.Next(1, 101);
+            int diceRoll = rand.Next(1, 51);
             Thread.Sleep(300);//1000 is one second
             if (diceRoll <= (attacker.CalcHitChance() - defender.CalcBlock()))
             {
@@ -39,14 +39,14 @@ namespace MonsterLibrary
             }//end else
         }//end DoAttack()
 
-        public static void DoBattle(Player player, Monster monster)
+        public static void DoBattle(Player main, Monster monster)
         {
             //player attacks first
-            DoAttack(player, monster);
+            DoAttack(main, monster);
             //monster attacks second, if they're alive
             if (monster.Life > 0)
             {
-                DoAttack(monster, player);
+                DoAttack(monster, main);
             }//end if
         }//end DoBattle()
     }//end class
