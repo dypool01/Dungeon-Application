@@ -48,6 +48,30 @@ namespace DungeonLibrary
             {
                 switch (value)
                 {
+                    case >=26:
+                        _str = value;
+                        PlusToHit = 12;
+                        break;
+                    case 25:
+                        _str = value;
+                        PlusToHit = 11;
+                        break;
+                    case 24:
+                        _str = value;
+                        PlusToHit = 10;
+                        break;
+                    case 23:
+                        _str = value;
+                        PlusToHit = 9;
+                        break;
+                    case 22:
+                        _str = value;
+                        PlusToHit = 8;
+                        break;
+                    case 21:
+                        _str = value;
+                        PlusToHit = 7;
+                        break;
                     case 20:
                         _str = value;
                         PlusToHit = 6;
@@ -87,7 +111,7 @@ namespace DungeonLibrary
             {
                 switch (value)
                 {
-                    case 20:
+                    case >=20:
                         _dex = value;
                         AC += 6;
                         break;
@@ -127,7 +151,7 @@ namespace DungeonLibrary
             {
                 switch (value)
                 {
-                    case 20:
+                    case >=20:
                         _con = value;
                         MaxLife += 35;
                         Life += 35;

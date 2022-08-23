@@ -6,14 +6,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using DungeonLibrary;
+
 using DungeonLibrary.Enums;
 using MonsterLibrary;
+
 using static System.Formats.Asn1.AsnWriter;
 
 namespace Dungeon
 {
     internal class DungeonLabOutline
     {
+        
+
         static void Main(string[] args)
         {
             
@@ -154,8 +158,14 @@ namespace Dungeon
                     "4. Paladin\n" +
                     "5. ShadowKnight\n" +
                     "6. Warrior\n");
-               //     "7. Wizard");
-            
+            //     "7. Wizard");
+
+
+            Weapon greataxe = new Weapon(5, 10, "GreatAxe of Rage", 12, true, WeaponType.GreatAxe);
+
+
+
+
             switch (Console.ReadLine())
             {
                 case "1":
@@ -164,8 +174,9 @@ namespace Dungeon
                         main.Str += 5;
                         main.Dex += 3;
                         main.Con += 2;
-                //        main.Intel += 3;
-                //        main.Wis += 1;
+                    //        main.Intel += 3;
+                    //        main.Wis += 1;
+                    main.EquippedWeapon = greataxe;
                     break;
 
                 case "2":
@@ -359,6 +370,10 @@ namespace Dungeon
             };
             return rooms[new Random().Next(rooms.Length)];
         }//end GetRoom
+
+
+        
+
 
     }//end class
 }//end namespace
