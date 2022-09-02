@@ -19,8 +19,10 @@ namespace MonsterLibrary
         public int MaxDamage { get; set; }
 
         private int _minDamage;
+        private int _bonusHitChance;
         public string Description { get; set; }
         public int MinDamage
+
         {
             get { return _minDamage; }
             //can't be more than maxdamage, can't be less than 1
@@ -42,6 +44,8 @@ namespace MonsterLibrary
             }//end else
         }//end MinDamage
 
+        public int BonusHitChance { get; set; }
+
         //PROPS
 
 
@@ -51,13 +55,13 @@ namespace MonsterLibrary
         //ctors
 
 
-        public Monster(string name, int life, int maxLife, int ac, int str, int dex, int con, int wis, int intel, string description, int maxDamage, int minDamage)
+        public Monster(string name, int life, int maxLife, int ac, int str, int dex, int con, int wis, int intel, string description, int maxDamage, int minDamage, int bonusHitChance)
             : base(name, life, maxLife, ac, str, dex, con, wis, intel)
         {
             MaxDamage = maxDamage;
             MinDamage = minDamage;
             Description = description;
-
+            BonusHitChance = bonusHitChance;
 
         }//unique props
 
@@ -86,14 +90,23 @@ Str: {Str}  Dex: {Dex}
             return new Random().Next(Str);// + 1 because it's exclusive
         }//end CalcDamage()
 
+        public override int CalcHitChance()
+        {
+            return base.CalcHitChance();
+        }
+
+        public override int CalcBlock()
+        {
+            return base.CalcBlock();
+        }
         //Monster Generator
 
         public static Monster GetMonster()
         {
-            Monster skeleton = new Monster("Skeleton", 10, 10, 14, 3, 15, 15, 14, 14, "A set of reanimated bones. Doesn't look entirely human.", 5, 3);
-            Monster gnoll = new Monster("Gnoll", 12, 15, 15, 5, 14, 14, 14, 14, "A humanoid hyena that loves to burrow through the ground.", 7, 5);
-            Monster orc = new Monster("Orc", 20, 25, 17, 6, 16, 16, 14, 14, "Ugly humanoids with a penchant for war.", 20, 10);
-            Monster spider = new Monster("A Large Spider", 15, 15, 14, 3, 18, 14, 14, 14, "A rather large species of Tarantula that feeds opportunisticly", 12, 3);
+            Monster skeleton = new Monster("Skeleton", 10, 10, 14, 3, 15, 15, 14, 14, "A set of reanimated bones. Doesn't look entirely human.", 5, 3, 2); //AC and strength need to be fixed, accidentally changed str instead of ac
+            Monster gnoll = new Monster("Gnoll", 12, 15, 15, 5, 14, 14, 14, 14, "A humanoid hyena that loves to burrow through the ground.", 7, 5,5);
+            Monster orc = new Monster("Orc", 20, 25, 17, 6, 16, 14, 14, 14, "Ugly humanoids with a penchant for war.", 20, 10, 10);
+            Monster spider = new Monster("A Large Spider", 15, 15, 14, 3, 18, 14, 14, 14, "A rather large species of Tarantula that feeds opportunisticly", 12, 3, 12);
 
             Random rand = new Random();
             List<Monster> monsters = new List<Monster>()
