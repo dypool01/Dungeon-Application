@@ -15,5 +15,6 @@ namespace DungeonLibrary
         Greatsword,
         Axe,
         Dagger
+        
     }//end enum
 }//end namespace

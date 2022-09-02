@@ -161,7 +161,7 @@ namespace Dungeon
             //     "7. Wizard");
 
 
-            Weapon greataxe = new Weapon(5, 10, "GreatAxe of Rage", 12, true, WeaponType.GreatAxe);
+            Weapon greataxe = new Weapon(5, 10, "GreatAxe", 12, true, WeaponType.GreatAxe);
 
 
 
@@ -182,51 +182,56 @@ namespace Dungeon
                 case "2":
                     main.PlayerJob = ClassesEnum.Cleric;
                     main.AC = 21;
-                          main.Str += 17;
-                          main.Dex += 18;
-                          main.Con += 18;
-                 //         main.Intel += 17;
-                 //         main.Wis += 20;
+                          main.Str += 1;
+                          main.Dex += 1;
+                          main.Con += 3;
+                    //         main.Intel += 17;
+                    //         main.Wis += 20;
+                    main.EquippedWeapon = greataxe;
                     break;
 
                 case "3":
                     main.PlayerJob = ClassesEnum.Monk;
                     main.AC = 15;
-                          main.Str += 19;
-                          main.Dex += 20;
-                          main.Con += 18;
-                 //         main.Intel += 17;
-                 //         main.Wis += 17;
+                          main.Str += 3;
+                          main.Dex += 5;
+                          main.Con += 2;
+                    //         main.Intel += 17;
+                    //         main.Wis += 17;
+                    main.EquippedWeapon = greataxe;
                     break;
 
                 case "4":
                     main.PlayerJob = ClassesEnum.Paladin;
                     main.AC = 23;
-                         main.Str += 18;
-                         main.Dex += 18;
-                         main.Con += 19;
-                  //       main.Intel += 16;
-                  //       main.Wis += 17;
+                         main.Str += 2;
+                         main.Dex += 2;
+                         main.Con += 4;
+                    //       main.Intel += 16;
+                    //       main.Wis += 17;
+                    main.EquippedWeapon = greataxe;
                     break;
 
                 case "5":
                     main.PlayerJob = ClassesEnum.ShadowKnight;
                     main.AC = 23;
-                        main.Str += 18;
-                        main.Dex += 18;
-                        main.Con += 19;
-                  //      main.Intel += 17;
-                  //      main.Wis += 16;
+                        main.Str += 3;
+                        main.Dex += 2;
+                        main.Con += 3;
+                    //      main.Intel += 17;
+                    //      main.Wis += 16;
+                    main.EquippedWeapon = greataxe;
                     break;
 
                 case "6":
                     main.PlayerJob = ClassesEnum.Warrior;
                     main.AC = 25;
-                         main.Str += 19;
-                         main.Dex += 19;
-                         main.Con += 20;
-                 //       main.Intel += 14;
-                 //       main.Wis += 14;
+                         main.Str += 3;
+                         main.Dex += 3;
+                         main.Con += 5;
+                    //       main.Intel += 14;
+                    //       main.Wis += 14;
+                    main.EquippedWeapon = greataxe;
                     break;
 
               //  case "7":
