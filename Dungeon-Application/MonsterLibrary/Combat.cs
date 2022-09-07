@@ -15,9 +15,9 @@ namespace MonsterLibrary
 
         public static void DoAttack(Character attacker, Character defender)
         {
-            //get a random number from 1-25 as our dice roll.
+            //get a random number from 1-40 as our dice roll.
             Random rand = new Random();
-            int diceRoll = rand.Next(1, 26);
+            int diceRoll = rand.Next(1, 41);
             Thread.Sleep(300);//1000 is one second
             if (diceRoll <= (attacker.CalcHitChance() - defender.CalcBlock()))
             {
@@ -35,6 +35,7 @@ namespace MonsterLibrary
             else
             {
                 //attack missed!
+                Console.ForegroundColor = ConsoleColor.DarkCyan;
                 Console.WriteLine($"{attacker.Name} missed!");
             }//end else
         }//end DoAttack()
