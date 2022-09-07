@@ -92,7 +92,8 @@ Str: {Str}  Dex: {Dex}
 
         public override int CalcHitChance()
         {
-            return base.CalcHitChance();
+            return base.CalcHitChance() + BonusHitChance; // needed to add the bonus hit chance to the hit chance added from strength to make it so the monster could hit.
+            // Monster hits pretty much relying on BonusHitChance, may as well call it hit chance and rework strength.
         }
 
         public override int CalcBlock()
@@ -103,10 +104,10 @@ Str: {Str}  Dex: {Dex}
 
         public static Monster GetMonster()
         {
-            Monster skeleton = new Monster("Skeleton", 10, 10, 14, 3, 15, 15, 14, 14, "A set of reanimated bones. Doesn't look entirely human.", 5, 3, 2); //AC and strength need to be fixed, accidentally changed str instead of ac
-            Monster gnoll = new Monster("Gnoll", 12, 15, 15, 5, 14, 14, 14, 14, "A humanoid hyena that loves to burrow through the ground.", 7, 5,5);
-            Monster orc = new Monster("Orc", 20, 25, 17, 6, 16, 14, 14, 14, "Ugly humanoids with a penchant for war.", 20, 10, 10);
-            Monster spider = new Monster("A Large Spider", 15, 15, 14, 3, 18, 14, 14, 14, "A rather large species of Tarantula that feeds opportunisticly", 12, 3, 12);
+            Monster skeleton = new Monster("Skeleton", 10, 10, 14, 15, 15, 15, 14, 14, "A set of reanimated bones. Doesn't look entirely human.", 5, 3, 15);
+            Monster gnoll = new Monster("Gnoll", 12, 15, 15, 15, 14, 14, 14, 14, "A humanoid hyena that loves to burrow through the ground.", 7, 5, 17);
+            Monster orc = new Monster("Orc", 20, 25, 17, 19, 16, 14, 14, 14, "Ugly humanoids with a penchant for war.", 20, 10, 20);
+            Monster spider = new Monster("A Large Spider", 15, 15, 14, 17, 18, 14, 14, 14, "A rather large species of Tarantula that feeds opportunistically.", 12, 3, 25);
 
             Random rand = new Random();
             List<Monster> monsters = new List<Monster>()

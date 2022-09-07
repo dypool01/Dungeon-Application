@@ -27,7 +27,7 @@ namespace Dungeon
             #region Intro
 
             //TODO Create exit in intro add ifs and else
-            Console.ForegroundColor = ConsoleColor.Blue;
+            Console.ForegroundColor = ConsoleColor.Cyan;
             Console.WriteLine("NEVERQUEST");
             Console.Title = "NEVERQUEST";
             Console.WriteLine();
@@ -280,7 +280,7 @@ namespace Dungeon
                 {
 
                     //2.TODO create switch
-
+                    Console.ForegroundColor = ConsoleColor.Cyan;
                     string choice = Console.ReadKey(true).Key.ToString();
                     Console.Clear();
 
@@ -301,15 +301,15 @@ namespace Dungeon
                                 //Could put logic here to have the player get items, life, or something similar due to beating the monster. Add logic for mini-boss monsters to drop certain weapons
                                 score++;
                                 Console.ForegroundColor = ConsoleColor.Green;
-                                Console.WriteLine($"\nYou killed {monster}");
+                                Console.WriteLine($"\nYou killed {monster}\n");
+                                Console.WriteLine($"Monsters Slain: {score}");
                                 //Add EQ coin loot noise here for winning
-                                Console.ResetColor();
                                 reload = true; //get a new room, and a new monster
                             }//end if
                             if (main.Life <= 0)
                             {
-                                Console.WriteLine("Dude.... You died!\a");
-                                Console.ForegroundColor= ConsoleColor.Magenta;
+                                Console.WriteLine($"You've been slain by {monster}!\a");
+                                Console.ForegroundColor = ConsoleColor.Red;
                                 //Add EQ skeleton laugh here for losing
                                 end = true;//leave the entire game
                             }//end if
